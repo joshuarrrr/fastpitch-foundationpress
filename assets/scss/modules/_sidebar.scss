@@ -5,6 +5,7 @@
 
   @include breakpoint(medium) {
     @include grid-column(4);
-    margin-top: 1rem;
+    // margin-top: 1rem;
+    margin-top: map-get($grid-column-gutter, medium) / 2;
   }
 }

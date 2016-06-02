@@ -1,10 +1,14 @@
 /* Navigation breakpoints */
 
-.desktop-menu, .top-bar-left {
+// .desktop-menu, .title-bar {
+//   @include show-for(medium);
+// }
+
+.desktop-menu {
   @include show-for(medium);
 }
 
-#mobile-menu, .title-bar {
+.mobile-menu, .title-bar {
   @include hide-for(medium);
 }
 
@@ -43,7 +47,7 @@
     line-height: 1;
 
     &:hover:not(.button) {
-      background-color: #2a2a2a;
+      border: 1px solid #4e4e4e;
     }
   }
 

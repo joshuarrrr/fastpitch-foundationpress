@@ -108,6 +108,25 @@
   Add your scss files below to structure your project styles
 */
 
+$thick-border: 5px double #333;
+
+@mixin partial-border($position: after) {
+  &::#{$position} {
+    border: 1px solid #555;
+    content: '';
+    display: block;
+    width: 50%;
+    
+    @if $position == after {
+      margin: 1rem auto 0;
+    }
+    @else {
+      margin: 0 auto 1rem;
+    }
+  }
+}
+
+
 // Modules
 @import "modules/navigation";
 @import "modules/footer";
@@ -126,3 +145,276 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
+
+$special-font: 'BernhardGothicEF-Medium', 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+
+body {
+  @include breakpoint(medium) {
+    padding: $global-padding;
+  }
+}
+
+.container {
+  @include grid-row();
+    background: url('../images/halftone/halftone/halftone.png');
+    box-shadow: inset 0 0 63px 0 rgba(167, 164, 84, 0.55);
+    // box-sizing: content-box;
+    padding: 1rem;
+
+    @include breakpoint(medium) {
+      margin: 1rem auto 2rem;
+      padding: 3rem;
+    }
+    // > * {
+    //  box-sizing: border-box;
+    // }
+}
+
+.title-bar {
+  text-align: center;
+}
+
+#page {
+  margin-top: 0;
+}
+
+.site-branding {
+  @include grid-row();
+}
+
+.headline-bar {
+  margin-bottom: 1rem;
+
+  @include breakpoint(medium) {
+    display: table;
+    margin-bottom: 0;
+    width: 100%;
+
+    div {
+      border: 1px solid black;
+      margin: 1rem;
+      padding: 1rem;
+      // display: inline-block;
+      display: table-cell;
+      vertical-align: middle;
+      // width: 20%;
+    }
+  }
+
+  text-align: center;
+
+}
+
+.site-title {
+  @extend h1;
+
+  margin-bottom: 0;
+  // font-size: 8rem;
+  // display: inline-block;
+  @include breakpoint(medium) {
+    display: table-cell;
+    font-size: 4rem;
+    vertical-align: middle;
+  }
+
+  font-family: $special-font;
+  // font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $anchor-color-hover;
+    }
+  }
+
+  // @include breakpoint(small) {
+  //   @include grid-column(12);
+  // }
+
+  // @include breakpoint(medium) {
+  //   @include grid-column(6);
+  //   @extend .medium-push-3;
+  // }
+}
+
+.home {
+  @include breakpoint(medium) {
+    .site-title {
+      font-size: 6rem;
+    }
+    .site-description {
+      font-size: 1.5rem;
+    }
+  }
+  @include breakpoint(large) {
+    .site-title {
+      font-size: 8rem;
+    }
+  }
+}
+
+.site-description {
+  @extend h3;
+  // font-size: 2.2rem;
+  // font-size: rem-calc(31);
+  text-align: center;
+  font-family: $body-font-family;
+  // font-weight: 400;
+  // text-transform: uppercase;
+
+  // @include breakpoint(small) {
+  //   @include grid-column(12);
+  // }
+
+  // @include breakpoint(medium) {
+  //   @include grid-column(3);
+  //   @extend .medium-pull-9;
+  // }
+}
+
+.menu {
+  // border: 3px solid #555;
+  // padding-bottom: 1rem;
+  font-family: $special-font;
+  // font-weight: bold;
+  text-align: center;
+  @include breakpoint(large) {
+    font-size: 1.4rem;
+  }
+  // margin: 0 auto 1rem;
+  // text-transform: uppercase;
+
+  a {
+    color: #333;
+
+    &:hover {
+      color: $anchor-color-hover;
+    }
+  }
+
+  .active > a {
+    background: none;
+    // border: 1px solid #333;
+    // color: #333;
+    color: $anchor-color;
+
+    &:hover {
+      color: $anchor-color-hover;
+    }
+  }
+  
+  @include partial-border(after);
+}
+
+.site-header {
+  border-bottom: $thick-border;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.widget {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #555;
+  }
+}
+
+.sidebar {
+  border: 3px double #555;
+}
+
+#page .main-content {
+  padding-left: 0;
+  // padding-right: rem-calc(30px);
+}
+
+.home .cover-copy {
+  @include breakpoint(large) {
+    // column-count: 3;
+    // text-align: justify;
+  }
+
+  > p {
+    // text-indent: 2rem;
+
+    &:first-of-type {
+      @extend .lead;
+      // font-size: 150%;
+      // text-align: left;
+      text-indent: 0;
+    }
+  }
+}
+
+.entry-title {
+  // text-align: center;
+  font-style: oblique;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#footer {
+  text-align: center;
+}
+
+.footer-widgets {
+  @include clearfix;
+}
+
+.site-info {
+  clear: both;
+  color: $dark-gray;
+  display: inline-block;
+  text-align: center;
+
+  @include partial-border(before);
+  
+}
+
+h6 {  
+  // text-transform: uppercase;
+  font-style: oblique;
+  font-weight: bold;
+  // margin-bottom: 0;
+}
+
+blockquote {
+  margin: ($paragraph-margin-bottom * 2) 0 $paragraph-margin-bottom;
+  border: $blockquote-border;
+  background: rgba(167, 164, 84, 0.1);
+  // font-family: $special-font;
+  // font-family: $header-font-family;
+  font-size: 120%;
+
+  &, p {
+    // line-height: $paragraph-lineheight;
+    color: $blockquote-color;
+    // color: $white;
+  }
+}
+
+figure {
+  max-width: 100%;
+  margin: 1em auto;
+}
+
+.updated,
+.wp-caption-text,
+.wp-caption>figcaption,
+.media-credit {
+  color: $dark-gray;
+  display: block;
+  font-size: 80%;
+  text-align: right;
+}
+
+.meta-description {
+  border-bottom: $blockquote-border;
+  font-size: 120%;
+  padding-bottom: 2rem;
+}
