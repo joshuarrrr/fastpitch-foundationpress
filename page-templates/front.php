@@ -7,17 +7,22 @@ get_header(); ?>
 <header id="front-hero" role="banner">
 	<div class="marketing">
 		<div class="tagline">
-			<h1><?php bloginfo( 'name' ); ?></h1>
+			<h3><?php bloginfo( 'name' ); ?></h3>
 			<h4 class="subheader"><?php bloginfo( 'description' ); ?></h4>
-			<a role="button" class="download large button sites-button hide-for-small-only" href="https://github.com/olefredrik/foundationpress">Download FoundationPress</a>
+			<a role="button" class="large button sites-button" href="https://issuu.com/touchstonebooks/docs/fastpitch_excerpt/1">Read an Exerpt</a>
 		</div>
 
-		<div id="watch">
+<!-- 		<div id="watch">
 			<section id="stargazers">
 				<a href="https://github.com/olefredrik/foundationpress">1.5k stargazers</a>
 			</section>
 			<section id="twitter">
 				<a href="https://twitter.com/olefredrik">@olefredrik</a>
+			</section>
+		</div> -->
+		<div id="watch">
+			<section id="twitter">
+				<a href="https://twitter.com/westlyer">@westlyer</a>
 			</section>
 		</div>
 	</div>

@@ -81,10 +81,12 @@
 
 		@include breakpoint(small) {
 			@include grid-column(8);
+			@include grid-column-position(4);
 		}
 
 		@include breakpoint(medium) {
 			@include grid-column(5);
+			@include grid-column-position(7);
 			padding-top: 6rem;
 		}
 
