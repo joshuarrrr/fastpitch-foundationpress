@@ -7,5 +7,11 @@ assets/components/
 assets/javascript/vendor/
 assets/javascript/foundation.js
 assets/javascript/custom/demosite.js
+assets/fonts/*.eot
+assets/fonts/*.ttf
+assets/fonts/*.woff
+assets/fonts/*.woff2
+assets/fonts/*.svg
 packaged/
+dist/
 wpcs/
