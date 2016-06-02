@@ -12,6 +12,9 @@
 if ( ! function_exists( 'foundationpress_scripts' ) ) :
 	function foundationpress_scripts() {
 
+	// Enqueue webfont
+	wp_enqueue_style( 'web-fonts', get_template_directory_uri() . '/assets/fonts/Bernhard_Gothic/Bernhard_Gothic.css');
+
 	// Enqueue the main Stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '2.6.1', 'all' );
 
