@@ -7,6 +7,39 @@
   Licensed under MIT Open Source
 */
 
+// Fonts
+// font families!
+@mixin font-face($fontname, $filename: $fontname, $weight: normal, $style: normal) {
+    // based on font squirrel output, without SVG (too legacy)
+    @font-face {
+        font-family: $fontname;
+        src:url('../fonts/#{$filename}.eot');
+        src:url('../fonts/#{$filename}.eot?#iefix') format('embedded-opentype'),
+            // url('../fonts/#{$filename}.woff2') format('woff2'),
+            url('../fonts/#{$filename}.woff') format('woff'),
+            url('../fonts/#{$filename}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+// @import url(https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+@include font-face('Winterthur Condensed', 'WinterthurCondensed-webfont');
+@include font-face('Winterthur Condensed', 'WinterthurCondensedOblique-webfont', normal, oblique);
+// @include font-face('Museo Slab', 'Museo_Slab_500_2-webfont');
+// @include font-face('Museo Slab', 'Museo_Slab_500italic-webfont', normal, italic);
+@include font-face('Permian Slab', 'PermianSlabSerifTypeface-webfont');
+// @include font-face('BernhardGothicEF-Medium', '31361F_0_0');
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+// @import url(https://fonts.googleapis.com/css?family=Raleway:400,900italic,900,800italic,800,700italic,700,600italic,600,500italic,500,400italic,300italic,300,200italic,200,100italic,100);
+// @include font-face('Winterthur Condensed Oblique', 'WinterthurCondensedOblique-webfont');
+// @import '../fonts/web fonts/winterthurcondensed_regular_macroman/stylesheet';
+// @import '../fonts/web fonts/winterthurcondensed_italic_macroman/stylesheet';
+// @import url(https://fonts.googleapis.com/css?family=Six+Caps|Eczar:400,500,600,700,800|Vesper+Libre:400,500,900,700|Sura:400,700|Sumana:400,700|Pragati+Narrow:400,700|News+Cycle:400,700|Work+Sans:400,900,800,700,600,500,300,200,100|Yantramanav:400,900,700,500,300,100);
+// @import url(https://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700);
+// @import url(https://fonts.googleapis.com/css?family=Stint+Ultra+Condensed);
+@import url(https://fonts.googleapis.com/css?family=Volkhov:400,400italic,700,700italic);
+
 //  Settings
 @import "global/settings"; // Foundation settings file.
 

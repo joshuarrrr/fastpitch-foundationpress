@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 105%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
@@ -62,7 +62,9 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+// $body-font-family: 'Helvetica Neue', Helvetica, Robot,o Arial, sans-serif;
+// $body-font-family: 'Droid Serif', 'PT Serif', Book Antiqua, URW Bookman L, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif;
+$body-font-family: 'Permian Slab', 'Bodoni MT', 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -102,26 +104,47 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+// $header-font-family: $body-font-family;
+// $header-font-family: "oldstyle 1";
+$header-font-family: "Winterthur Condensed";
+// $header-font-family: "old statndard tt";
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+// $header-sizes: (
+//   small: (
+//     'h1': 24,
+//     'h2': 20,
+//     'h3': 19,
+//     'h4': 18,
+//     'h5': 17,
+//     'h6': 16,
+//   ),
+//   medium: (
+//     'h1': 48,
+//     'h2': 40,
+//     'h3': 31,
+//     'h4': 25,
+//     'h5': 20,
+//     'h6': 16,
+//   ),
+// );
 $header-sizes: (
   small: (
-    'h1': 24,
-    'h2': 20,
-    'h3': 19,
+    'h1': 50,
+    'h2': 30,
+    'h3': 24,
     'h4': 18,
     'h5': 17,
     'h6': 16,
   ),
   medium: (
-    'h1': 48,
+    'h1': 40,
     'h2': 40,
-    'h3': 31,
+    'h3': 20,
     'h4': 25,
     'h5': 20,
-    'h6': 16,
+    'h6': 20,
   ),
 );
 $header-color: inherit;
