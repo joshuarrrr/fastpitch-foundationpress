@@ -10,6 +10,7 @@ var sequence    = require('run-sequence');
 var colors      = require('colors');
 var dateFormat  = require('dateformat');
 var del         = require('del');
+var rsync       = require('gulp-rsync');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
@@ -77,6 +78,7 @@ var PATHS = {
     '!**/composer.lock',
     '!**/codesniffer.ruleset.xml',
     '!**/packaged/*',
+    '!**/dist/*'
   ]
 };
 
@@ -186,9 +188,12 @@ gulp.task('package', ['build'], function() {
   var pkg = JSON.parse(fs.readFileSync('./package.json'));
   var title = pkg.name + '_' + time + '.zip';
 
+  // return gulp.src(PATHS.pkg)
+  //   .pipe($.zip(title))
+  //   .pipe(gulp.dest('packaged'));
+
   return gulp.src(PATHS.pkg)
-    .pipe($.zip(title))
-    .pipe(gulp.dest('packaged'));
+    .pipe(gulp.dest('dist/' + pkg.name));
 });
 
 // Build task
@@ -241,6 +246,26 @@ gulp.task('clean:css', function() {
       'assets/stylesheets/foundation.css',
       'assets/stylesheets/foundation.css.map'
     ]);
+});
+
+// Clean dist
+gulp.task('clean:dist', function() {
+  return del([
+      'dist/*'
+    ]);
+});
+
+gulp.task('deploy', function() {
+  gulp.src('dist/**')
+    .pipe(rsync({
+      root: 'dist',
+      hostname: 'fastpitchthebook.com',
+      destination: 'fastpitchthebook.com/wp-content/themes',
+      username: 'joshuarrrr_shell',
+      incremental: true,
+      progress: true,
+      verbose: true
+    }));
 });
 
 // Default gulp task
