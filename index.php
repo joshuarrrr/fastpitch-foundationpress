@@ -17,6 +17,17 @@ get_header(); ?>
 
 <div id="page" role="main">
 	<article class="main-content">
+	<?php if( is_home() && get_option('page_for_posts') ) : ?>
+		<header class="entry-header">
+			<h1 class="entry-title"><?php echo apply_filters('the_title',get_page( get_option('page_for_posts') )->post_title); ?></h1>
+		</header>
+	<?php endif; ?>
+	<?php $description = get_post_meta(get_page( get_option('page_for_posts'))->ID,'Description', true);
+	if ($description) :
+	?>
+	<p class="meta-description"><?php echo $description; ?></p>
+	<?php
+	endif; ?>
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
