@@ -14,7 +14,7 @@ var rsync       = require('gulp-rsync');
 
 // Enter URL of your local server here
 // Example: 'http://localwebsite.dev'
-var URL = '';
+var URL = 'localhost/bookauthor_theme';
 
 // Check for --production flag
 var isProduction = !!(argv.production);
