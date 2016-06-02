@@ -58,7 +58,7 @@
 				font-style: normal;
 				font-weight: normal;
 				text-decoration: inherit;
-				color: #B4C9D1;
+				// color: #B4C9D1;
 				margin-right: rem-calc(8);
 			}
 		}
@@ -70,7 +70,7 @@
 				font-style: normal;
 				font-weight: normal;
 				text-decoration: inherit;
-				color: #B4C9D1;
+				// color: #B4C9D1;
 				margin-right: rem-calc(8);
 			}
 		}
@@ -90,8 +90,8 @@
 
 	}
 
-	h1 {
-		color: #fff;
+	h3 {
+		// color: #fff;
 		font-weight: 500;
 
 		@include breakpoint(small) {
@@ -105,7 +105,7 @@
 	}
 
 	h4 {
-		color: #fefefe;
+		// color: #fefefe;
 		font-weight: 300;
 		font-size: 1.3125rem;
 	}

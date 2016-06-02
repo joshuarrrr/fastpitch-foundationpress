@@ -48,19 +48,30 @@
 $global-font-size: 105%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
+// $foundation-palette: (
+//   primary: #2199e8,
+//   secondary: #777,
+//   success: #3adb76,
+//   warning: #ffae00,
+//   alert: #ec5840,
+// );
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
+  primary: #4631A4,
+  secondary: #e72a2c,
   success: #3adb76,
   warning: #ffae00,
   alert: #ec5840,
 );
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+// $medium-gray: #cacaca;
+$medium-gray: #BFBBA7;
+// $dark-gray: #8a8a8a;
+$dark-gray: #9C9781;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+// $body-background: $white;
+// $body-background: #E5E2F5;
+$body-background: #9C9781;
 $body-font-color: $black;
 // $body-font-family: 'Helvetica Neue', Helvetica, Robot,o Arial, sans-serif;
 // $body-font-family: 'Droid Serif', 'PT Serif', Book Antiqua, URW Bookman L, Palatino, Palatino Linotype, Palatino LT STD, Georgia, serif;
@@ -162,7 +173,8 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $primary-color;
+// $anchor-color: $primary-color;
+$anchor-color: $secondary-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
@@ -178,9 +190,11 @@ $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
-$blockquote-color: $dark-gray;
-$blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $medium-gray;
+// $blockquote-color: $dark-gray;
+$blockquote-color: $black;
+$blockquote-padding: rem-calc(19 24 10 29);
+// $blockquote-border: 1px solid $medium-gray;
+$blockquote-border: 2px solid $dark-gray;
 $cite-font-size: rem-calc(13);
 $cite-color: $dark-gray;
 $keystroke-font: $font-family-monospace;
@@ -581,8 +595,10 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0;
-$topbar-background: #121212;
+// $topbar-background: #121212;
+$topbar-background: none;
 $topbar-submenu-background: $topbar-background;
-$topbar-link-color: #fff;
+// $topbar-link-color: #fff;
+$topbar-link-color: $black;
 $topbar-input-width: 200px;
 $topbar-unstack-breakpoint: medium;
