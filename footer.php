@@ -10,14 +10,21 @@
 
 ?>
 
-		</section>
+		
 		<div id="footer-container">
 			<footer id="footer">
 				<?php do_action( 'foundationpress_before_footer' ); ?>
-				<?php dynamic_sidebar( 'footer-widgets' ); ?>
+				<div class="footer-widgets">
+					<?php dynamic_sidebar( 'footer-widgets' ); ?>
+				</div>
+				<div class="site-info">
+					<span class="copyright">Copyright © 2016 Erica Westly</span> | 
+					<span class="design-credit">Site design: Josh Romero</span>
+				</div><!-- .site-info -->
 				<?php do_action( 'foundationpress_after_footer' ); ?>
 			</footer>
 		</div>
+		</section>
 
 		<?php do_action( 'foundationpress_layout_end' ); ?>
 
@@ -30,5 +37,6 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
+
 </body>
 </html>
